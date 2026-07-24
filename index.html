@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronics Shop Catalog</title>
+  <meta
+    name="description"
+    content="A full-stack electronics shop catalog with brand-wise categories, quick filters, callback requests, and a local admin panel."
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="site-body">
+  <div class="site-shell">
+    <header class="hero" id="home">
+      <nav class="topbar" aria-label="Primary">
+        <a class="brand" href="#home">Electronics Shop</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+          Menu
+        </button>
+        <div class="menu" id="site-menu">
+          <a href="#brands">Brands</a>
+          <a href="#services">Services</a>
+          <a href="#callback">Callback</a>
+          <a href="#contact">Contact</a>
+          <a href="/admin.html">Admin</a>
+        </div>
+      </nav>
+
+      <div class="hero-layout">
+        <section class="hero-copy">
+          <p class="eyebrow">Electronics Catalog</p>
+          <div class="headline-row">
+            <h1 id="shop-name">Loading shop details...</h1>
+            <span class="status-badge" id="status-badge">Checking hours</span>
+          </div>
+          <p class="hero-text" id="shop-tagline">
+            The customer site is loading live shop information from the local backend.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" id="call-link" href="tel:+919876543210">Call the Shop</a>
+            <a class="button button-secondary" href="#brands">Browse Brands</a>
+          </div>
+          <ul class="hero-points" id="highlights-list" aria-label="Shop highlights"></ul>
+          <p class="hero-note" id="hero-note"></p>
+        </section>
+
+        <div class="hero-side">
+          <aside class="hero-card" aria-label="Shop snapshot">
+            <p class="section-tag">Shop Snapshot</p>
+            <dl class="snapshot-list">
+              <div>
+                <dt>Phone</dt>
+                <dd id="shop-phone">Loading...</dd>
+              </div>
+              <div>
+                <dt>Address</dt>
+                <dd id="shop-address">Loading...</dd>
+              </div>
+              <div>
+                <dt>Hours</dt>
+                <dd id="shop-hours">Loading...</dd>
+              </div>
+            </dl>
+            <div class="feature-pills" id="service-note-pills"></div>
+          </aside>
+          <div class="hero-tech-grid" id="hero-tech-grid" aria-label="Top categories"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section stats-section" aria-label="Quick stats">
+        <div class="stats-grid" id="stats-grid"></div>
+      </section>
+
+      <section class="section controls-section" id="brands">
+        <div class="section-heading">
+          <div>
+            <p class="section-tag">Search and Filter</p>
+            <h2>Find brands and categories quickly</h2>
+          </div>
+          <p>
+            Search by brand or category, or tap a chip to narrow the electronics catalog.
+          </p>
+        </div>
+
+        <div class="control-panel">
+          <div class="filter-summary">
+            <p class="summary-kicker">Quick Find</p>
+            <h3>Curated navigation for a local electronics customer</h3>
+            <p>
+              Search a brand directly or narrow by category to quickly understand what the shop carries before calling.
+            </p>
+          </div>
+          <div class="filter-panel">
+            <label class="search-box" for="search-input">
+              <span>Search</span>
+              <input id="search-input" type="search" placeholder="Try Samsung, TV, headphones, charger...">
+            </label>
+            <div class="chips-wrap" id="filter-chips" aria-label="Category filters"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section featured-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-tag">Featured Brands</p>
+            <h2>Trusted electronics names at a glance</h2>
+          </div>
+          <p>
+            These highlighted brands are shown separately so customers can immediately spot the most in-demand options.
+          </p>
+        </div>
+
+        <div class="featured-grid" id="featured-grid"></div>
+      </section>
+
+      <section class="section catalog-section">
+        <div class="section-heading">
+          <div>
+            <p class="section-tag">Brand Catalog</p>
+            <h2>Company-wise electronics sections</h2>
+          </div>
+          <p>
+            Each brand shows broad electronics categories instead of deep product listings, keeping the site practical and fast to understand.
+          </p>
+        </div>
+
+        <div class="company-grid" id="company-grid"></div>
+        <p class="empty-state hidden" id="empty-state">
+          No brands match the current search or category filter.
+        </p>
+      </section>
+
+      <section class="section support-section" id="services">
+        <div class="section-heading">
+          <div>
+            <p class="section-tag">Services and Support</p>
+            <h2>Useful help beyond product availability</h2>
+          </div>
+          <p>
+            The shop can guide customers on stock availability, suitable appliances, and accessory options before purchase.
+          </p>
+        </div>
+
+        <div class="service-grid" id="service-grid"></div>
+      </section>
+
+      <section class="section callback-section" id="callback">
+        <div class="section-heading">
+          <div>
+            <p class="section-tag">Callback Request</p>
+            <h2>Ask the shop to call you back</h2>
+          </div>
+          <p>
+            Customers can leave a quick request if they want confirmation before visiting or calling again.
+          </p>
+        </div>
+
+        <div class="callback-layout">
+          <form class="callback-form" id="callback-form">
+            <div class="form-grid">
+              <label>
+                <span>Name</span>
+                <input name="name" type="text" maxlength="60" required>
+              </label>
+              <label>
+                <span>Phone</span>
+                <input name="phone" type="tel" maxlength="20" required>
+              </label>
+              <label>
+                <span>Brand Interest</span>
+                <input name="brandInterest" type="text" maxlength="80" placeholder="Samsung TV, boAt accessories, LG fridge...">
+              </label>
+              <label>
+                <span>Message</span>
+                <textarea name="message" rows="4" maxlength="240" placeholder="Tell the shop what you want to ask or buy."></textarea>
+              </label>
+            </div>
+            <div class="form-actions">
+              <button class="button button-primary" type="submit">Submit Request</button>
+              <p class="form-status" id="form-status" aria-live="polite"></p>
+            </div>
+          </form>
+
+          <aside class="callback-aside">
+            <article class="info-card">
+              <p class="section-tag">Response Window</p>
+              <h3>Fast local follow-up</h3>
+              <p>Use this form when you want stock confirmation, model availability, or a callback before visiting the shop.</p>
+            </article>
+            <article class="info-card">
+              <p class="section-tag">Best Uses</p>
+              <ul class="mini-list">
+                <li>Confirm TV or appliance availability</li>
+                <li>Ask about accessories and compatible cables</li>
+                <li>Check delivery or installation support</li>
+              </ul>
+            </article>
+            <article class="trust-card">
+              <strong>Local data only</strong>
+              <p>This demo stores requests locally for the shop owner to review from the admin page.</p>
+            </article>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="section-heading">
+          <div>
+            <p class="section-tag">Contact</p>
+            <h2>Reach the electronics shop easily</h2>
+          </div>
+          <p>
+            The catalog makes discovery easy, but the final buying step remains a direct call or visit.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h3>Call</h3>
+            <p id="contact-phone">Loading...</p>
+            <a id="contact-call-link" href="tel:+919876543210">Tap to call</a>
+          </article>
+          <article class="contact-card">
+            <h3>Visit</h3>
+            <p id="contact-address">Loading...</p>
+            <span>Local store support for appliances and accessories</span>
+          </article>
+          <article class="contact-card">
+            <h3>Opening Hours</h3>
+            <p id="contact-hours">Loading...</p>
+            <span id="contact-status-text">Checking shop timing</span>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Internship full-stack demo for a local electronics shop.</p>
+      <p>&copy; <span id="current-year"></span> <span id="footer-name">Electronics Shop</span></p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electronics Shop Admin</title>
+  <meta
+    name="description"
+    content="Local admin dashboard for managing electronics shop details, brand categories, and callback inquiries."
+  >
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+  <div class="admin-shell">
+    <header class="admin-header">
+      <div>
+        <p class="section-tag">Local Admin Panel</p>
+        <h1>Manage shop content and inquiries</h1>
+        <p class="admin-intro">
+          Update the public electronics catalog, keep brand data current, and review customer callback requests from one local page.
+        </p>
+      </div>
+      <div class="admin-actions">
+        <a class="button button-secondary" href="/index.html">View Customer Site</a>
+      </div>
+    </header>
+
+    <main class="admin-grid">
+      <section class="admin-card">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-tag">Shop Details</p>
+            <h2>Public shop information</h2>
+          </div>
+        </div>
+
+        <form id="shop-form" class="admin-form">
+          <div class="form-grid admin-form-grid">
+            <label>
+              <span>Shop Name</span>
+              <input name="name" type="text" required>
+            </label>
+            <label>
+              <span>Tagline</span>
+              <input name="tagline" type="text" required>
+            </label>
+            <label>
+              <span>Phone</span>
+              <input name="phone" type="text" required>
+            </label>
+            <label>
+              <span>Address</span>
+              <input name="address" type="text" required>
+            </label>
+            <label>
+              <span>Open Time</span>
+              <input name="open" type="time" required>
+            </label>
+            <label>
+              <span>Close Time</span>
+              <input name="close" type="time" required>
+            </label>
+            <label>
+              <span>Working Days</span>
+              <input name="days" type="text" required>
+            </label>
+            <label>
+              <span>Closed Days</span>
+              <input name="closedDays" type="text" placeholder="Sunday">
+            </label>
+            <label>
+              <span>Hero Note</span>
+              <textarea name="heroNote" rows="3"></textarea>
+            </label>
+            <label>
+              <span>Highlights (one per line)</span>
+              <textarea name="highlights" rows="4"></textarea>
+            </label>
+            <label>
+              <span>Service Notes (one per line)</span>
+              <textarea name="serviceNotes" rows="5"></textarea>
+            </label>
+          </div>
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Save Shop Details</button>
+            <p class="form-status" id="shop-status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
+      <section class="admin-card">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-tag">Brand Dataset</p>
+            <h2>Company and category catalog</h2>
+          </div>
+        </div>
+
+        <form id="companies-form" class="admin-form">
+          <label class="block-label">
+            <span>Companies JSON</span>
+            <textarea id="companies-json" rows="20" spellcheck="false"></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Save Company Data</button>
+            <p class="form-status" id="companies-status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
+      <section class="admin-card admin-card-wide">
+        <div class="section-heading compact">
+          <div>
+            <p class="section-tag">Callback Requests</p>
+            <h2>Customer inquiries</h2>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="inquiry-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Brand Interest</th>
+                <th>Message</th>
+                <th>Submitted</th>
+              </tr>
+            </thead>
+            <tbody id="inquiry-table-body"></tbody>
+          </table>
+        </div>
+        <p class="empty-state hidden" id="inquiry-empty">No callback requests yet.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Shop front illustration</title>
+  <desc id="desc">A stylized illustration of a neighborhood shop front.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f5d9be"/>
+      <stop offset="100%" stop-color="#f7efe2"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <rect x="0" y="420" width="800" height="180" fill="#dbb88e"/>
+  <rect x="120" y="150" width="560" height="280" rx="24" fill="#fff9f0" stroke="#c58f63" stroke-width="6"/>
+  <rect x="160" y="190" width="480" height="70" rx="18" fill="#d46a4f"/>
+  <text x="400" y="235" font-family="Georgia, serif" font-size="34" text-anchor="middle" fill="#fff7f2">Pragati General Store</text>
+  <rect x="180" y="280" width="120" height="130" rx="12" fill="#e5c49f"/>
+  <rect x="340" y="280" width="120" height="130" rx="12" fill="#8cb0c9"/>
+  <rect x="500" y="280" width="120" height="130" rx="12" fill="#93ad7f"/>
+  <rect x="350" y="328" width="100" height="82" rx="10" fill="#f8f1e8"/>
+  <circle cx="385" cy="368" r="8" fill="#c58f63"/>
+  <circle cx="415" cy="368" r="8" fill="#c58f63"/>
+  <path d="M110 420h580" stroke="#8c6146" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="230" cy="465" r="28" fill="#6f8b64"/>
+  <circle cx="590" cy="470" r="24" fill="#4e7698"/>
+</svg>
