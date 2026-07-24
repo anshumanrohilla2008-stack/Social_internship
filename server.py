@@ -231,7 +231,7 @@ class ShopHandler(SimpleHTTPRequestHandler):
 
 
 def main():
-    port = 8010
+    port = int(os.environ.get("PORT", 8010))
     if len(sys.argv) > 1:
         try:
             port = int(sys.argv[1])
@@ -239,7 +239,7 @@ def main():
             print("Invalid port. Use an integer port number.")
             raise SystemExit(1)
 
-    server = ThreadingHTTPServer(("127.0.0.1", port), ShopHandler)
+    server = ThreadingHTTPServer(("0.0.0.0", port), ShopHandler)
     print(f"Serving electronics shop app at http://127.0.0.1:{port}")
     try:
         server.serve_forever()
