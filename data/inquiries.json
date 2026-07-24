@@ -1,0 +1,42 @@
+[
+  {
+    "id": "4f6d33b7c90e4cb09efe67ee38b9ebaa",
+    "name": "Anshuman Rohilla",
+    "phone": "9319972003",
+    "brandInterest": "samsung",
+    "message": "mobile",
+    "submittedAt": "2026-07-20T22:12:47"
+  },
+  {
+    "id": "1425725ac9934739ad868c2355f17d50",
+    "name": "Rudra Tomar",
+    "phone": "9319972003",
+    "brandInterest": "samsung",
+    "message": "boat chahiye mujhe",
+    "submittedAt": "2026-07-20T22:38:40"
+  },
+  {
+    "id": "19f75f0064ef45d787b1ca58fbf54560",
+    "name": "Anshuman",
+    "phone": "9891389319",
+    "brandInterest": "boat",
+    "message": "bhai saman chahiye",
+    "submittedAt": "2026-07-21T16:18:10"
+  },
+  {
+    "id": "e4dda91e976a480395af10e47b0bdd33",
+    "name": "manan",
+    "phone": "9319972003",
+    "brandInterest": "boat",
+    "message": "bhai saman dedo",
+    "submittedAt": "2026-07-21T18:19:58"
+  },
+  {
+    "id": "fa36356468174607ae4896b61a1433d2",
+    "name": "anshuman",
+    "phone": "9319972003",
+    "brandInterest": "samsung",
+    "message": "i want to buy a samsung washing machine",
+    "submittedAt": "2026-07-21T18:35:02"
+  }
+]
